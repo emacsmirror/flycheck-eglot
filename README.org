@@ -2,6 +2,24 @@
 #+AUTHOR: Sergey Firsov <intramurz@gmail.com>
 [[https://melpa.org/#/flycheck-eglot][file:https://melpa.org/packages/flycheck-eglot-badge.svg]]     [[https://stable.melpa.org/#/flycheck-eglot][file:https://stable.melpa.org/packages/flycheck-eglot-badge.svg]]
 
+#+begin_quote
+*This package is deprecated.  If you run Flycheck 38 or newer, uninstall it.*
+
+Flycheck 38 ships an Eglot bridge out of the box, and it deliberately uses
+the same mode names this package defined - =flycheck-eglot-mode= and
+=global-flycheck-eglot-mode= - so having both installed makes them clash.
+Remove flycheck-eglot from your config, and the same setup keeps working
+against the built-in implementation:
+
+#+begin_src elisp
+(global-flycheck-eglot-mode)
+#+end_src
+
+The built-in bridge also understands the Emacs 31 pull-diagnostics model
+and offers the server's quickfix code actions as Flycheck fixes.
+On Flycheck 37 or older this package still works; upgrade when you can.
+#+end_quote
+
 A simple "glue" minor mode that allows [[https://www.flycheck.org/][Flycheck]] and [[https://github.com/joaotavora/eglot][Eglot]] to work together. Thus, the Flycheck frontend can display the results of syntactic checks performed by the LSP server.
 
 * Install
